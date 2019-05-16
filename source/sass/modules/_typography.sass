@@ -1,0 +1,17 @@
+$ff-s: 'Merriweather', serif
+$ff-ss: 'Six Caps', sans-serif
+
+$fw-n: 400
+$fw-b: 900
+
+$letter-spacing: 20px
+
+=sans-serif($fs,$ff: $ff-ss,$ls:.2em, $color: $dark-grey, $tt: uppercase,$lh: 1)
+    letter-spacing: $ls
+    font:
+        size: $fs
+        family: $ff
+    text-transform: $tt
+    color: $color
+    line-height: $lh
+
