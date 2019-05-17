@@ -1,0 +1,88 @@
+.portfolio
+    text-align: center
+    background: rgba($light-blue,.14)
+    padding: 5em 0
+
+    h1 
+        color: $navy
+
+.portfolio-items
+    display: flex
+    flex-wrap: wrap
+    +container($max-width: 250px)
+
+.portfolio-item
+    position: relative
+    overflow: hidden
+    flex: 1 1 10rem
+  
+    img
+        display: block
+        width: 100%
+
+    figcaption
+        position: absolute
+        top: 100%
+        bottom: 0
+        right: 0
+        left: 0
+        padding: 2.4em
+        text-align: right
+        color: $white
+        display: flex
+        background: rgba($light-blue,.65)
+        flex-direction: column
+        transition: top ease-in-out 250ms
+
+    &:hover figcaption,
+    &:focus figcaption
+        top: 0
+
+.portfolio-link
+        color: $white 
+        font:
+            weight: $fw-b
+            size: 1.2rem
+
+        text-decoration: none
+        border-bottom: 3.5px solid $white
+        align-self: flex-end
+
+        &::after
+            content: url(../img/arrow-white.svg)
+            display: inline-block
+            height: .8em
+            width: .8em
+            margin-left: .5em
+
+
+.portfolio-desc
+    display: none
+
+    .featured &
+        display: block
+
+.portfolio-title
+    color: $white
+    font-size: 2.5rem
+    margin-bottom: auto
+
+    .featured &
+        font-size: 5rem
+
+
+@supports (display: grid)
+    .portolio-items
+        display: grid
+        grid-template-columns: repeat(2,2fr)
+
+    .portfolio-item.featured
+        grid-column: 1 / span 2
+        grid-row: 1 / span 2 
+
+    .featured 
+        .portfolio-title
+            font-size: 5rem
+
+        .portfolio-desc
+            display: block
